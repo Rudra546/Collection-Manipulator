@@ -11,12 +11,13 @@ records, as well as listing all unique subjects offered.
 
 ### 1. Add Student
 
-Allows entering: - Student ID\
-- Name\
-- Age\
-- Date of Birth\
-- Grade\
-- Subjects (comma-separated)
+Allows entering:- 
+- Student ID:
+- Name:
+- Age:
+- Date of Birth:
+- Grade:
+- Subjects (comma-separated):
 
 ### 2. Display All Students
 
@@ -41,15 +42,13 @@ Terminates the program.
 ------------------------------------------------------------------------
 
 ## 🧾 Source Code
-
-``` python
 print("Welcome to the Student Data Organizer!")
 
 students = []
 
 while True:
     print("Select an option:")
-    print("\n1. Add Student")
+    print("1. Add Student")
     print("2. Display All Students")
     print("3. Update Student Information")
     print("4. Delete Student")
@@ -59,7 +58,7 @@ while True:
     choice = input("Enter your choice: ")
     if choice == "1":
         print("Enter student details:")
-
+    
         s = {
             "student id": input("Student ID: "),
             "Name": input("Name: "),
@@ -76,9 +75,11 @@ while True:
             print("No student record found.")
         else:
             for s in students:
-                print(f"\nStudent ID: {s['student id']} | Name: {s['Name']} | Age: {s['Age']} | "
+                print(f"Student ID: {s['student id']} | Name: {s['Name']} | Age: {s['Age']} | "
                       f"Grade: {s['grade']} | Date of Birth: {s['Date of birth']} | "
                       f"Subjects: {', '.join([sub.strip() for sub in s['Subjects']])}")
+
+
 
     elif choice == "3":
         studentid = input("Enter student ID to update: ")
@@ -91,7 +92,7 @@ while True:
                 s["Subjects"] = input("Enter new subjects seperated by comma: ").split(',')
                 print("Student information updated.")
                 break
-
+        
     elif choice == "4":
         studentid = input("Enter student ID to delete: ")
         for s in students:
@@ -99,7 +100,7 @@ while True:
                 students.remove(s)
                 print("Student deleted successfully.")
                 break
-
+        
     elif choice == "5":
         subjects = set()
         for s in students:
@@ -119,7 +120,6 @@ while True:
     else:
         print("Invalid choice! Please choose between 1 to 6.")
         print("Student not found.")
-```
 
 ------------------------------------------------------------------------
 
